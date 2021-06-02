@@ -73,9 +73,16 @@ The link contains a specific setting that allows access via Django mail API. Sin
 If you are just testing, then you can temporarily do this setting. 
 
 
-## Send emails
+## :email: Send emails
 
-On your terminal window, go to the folder with `manage.py` and type: 
+On your terminal window, go to the folder with the Pip files and type: 
+
+```python
+pipenv shell
+```
+
+
+Then change to the folder with `manage.py` and type: 
 
 ```python
 python manage.py runserver
