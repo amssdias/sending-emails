@@ -1,0 +1,59 @@
+{% extends "emails/base.html" %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="d-flex flex-row justify-content-center">Send an email to a friend</h1>
+        <form class="my-5" action="{% url 'send_email' %}" method="POST">
+            {% csrf_token %}
+
+            {% if error %}
+                <div class="alert alert-danger">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+
+            <div class="input-group mb-3">
+                {{ form.user_host_email }}
+                <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+            </div>
+
+            {% include "emails/form_errors.html" with form=form.user_host_email %}
+
+            <div class="mb-3">
+                {{ form.password }}
+            </div>
+
+            {% include "emails/form_errors.html" with form=form.password %}
+
+            {% if message %}
+            <p class="error-message"><strong>{{ message }}</strong></p>
+            {% endif %}
+            
+            <label for="basic-url" class="form-label">To:</label>
+            
+            <div class="input-group mb-3">
+                {{ form.recipient }}
+                <span class="input-group-text">@</span>
+                {{ form.recipient_server }}
+            </div>
+            
+            {% include "emails/form_errors.html" with form=form.recipient %}
+
+            <div class="mb-3">
+                <label for="Subject" class="form-label">Subject</label>
+                {{ form.subject }}
+            </div>
+            
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                {{ form.message }}
+            </div>
+
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary mt-3" type="submit">Send</button>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}
