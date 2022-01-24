@@ -1,0 +1,9 @@
+INFO     24-01-2022 15:09:37 basehttp 25084 24124 "GET /emails/send_email/ HTTP/1.1" 200 2844
+INFO     24-01-2022 15:09:38 basehttp 25084 24124 "GET /static/emails/css/style.css HTTP/1.1" 200 401
+INFO     24-01-2022 15:09:38 basehttp 25084 24124 "GET /static/emails/images/mail1.jpg HTTP/1.1" 200 949523
+WARNING  24-01-2022 15:09:40 log 25084 15264 Bad Request: /emails/send_email/
+WARNING  24-01-2022 15:09:40 basehttp 25084 15264 "POST /emails/send_email/ HTTP/1.1" 400 3023
+INFO     24-01-2022 15:09:56 autoreload 25084 8320 C:\Users\André\Desktop\Programming\Python\Django\Github - Dataflair\Send Emails\emails\views.py changed, reloading.
+INFO     24-01-2022 15:09:57 autoreload 2948 23020 Watching for file changes with StatReloader
+INFO     24-01-2022 15:10:04 autoreload 2948 23020 C:\Users\André\Desktop\Programming\Python\Django\Github - Dataflair\Send Emails\emails\views.py changed, reloading.
+INFO     24-01-2022 15:10:04 autoreload 17744 2596 Watching for file changes with StatReloader

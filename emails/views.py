@@ -7,12 +7,9 @@ from django.views.generic.base import TemplateResponseMixin
 from django.views.generic.edit import FormMixin
 from django.core.mail import send_mail
 
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
-
 from .forms import SendMailForm
 
-@method_decorator(csrf_exempt, name="dispatch")
+
 class SendMailFormView(FormMixin, TemplateResponseMixin, View):
     form_class = SendMailForm
     success_url = 'emails/send_email/'

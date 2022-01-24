@@ -125,8 +125,34 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#DataFlair
+# Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
+
+# Logs
+LOGGING = {
+    'version': 1,
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+        }
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': './logs/info.log',
+            'formatter': 'simpleRe',
+        }
+    },
+    'formatters': {
+        'simpleRe': {
+            'format': '{levelname:8s} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+            'datefmt': '%d-%m-%Y %H:%M:%S'
+        }
+    }
+}
